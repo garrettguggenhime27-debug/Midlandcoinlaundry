@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Outfit:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Vibrant, Colorful Laundry Theme */
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* HSL Values */
+  --background: 195 60% 97%;
+  --foreground: 222 47% 11%;
+
+  /* Primary - Bright Ocean Blue */
+  --primary: 200 100% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Secondary - Soft Lavender */
+  --secondary: 260 60% 92%;
+  --secondary-foreground: 222 47% 11%;
+
+  /* Muted - Subtle cool gray */
+  --muted: 200 30% 94%;
+  --muted-foreground: 215 20% 40%;
+
+  /* Accent - Vibrant Teal */
+  --accent: 170 85% 38%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 200 50% 85%;
+  --input: 200 50% 85%;
+  --ring: 200 100% 45%;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-slate-900;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
